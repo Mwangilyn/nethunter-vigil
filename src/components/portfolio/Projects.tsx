@@ -1,8 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Network, BarChart3, Eye } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { Shield, Network, BarChart3, Eye, ChevronDown, Filter } from "lucide-react";
+import { useState } from "react";
 
 const Projects = () => {
+  const [selectedFilter, setSelectedFilter] = useState<string>("all");
   const projects = [
     {
       icon: Shield,
@@ -10,7 +19,8 @@ const Projects = () => {
       description: "Set up Snort IDS on Kali Linux to monitor suspicious traffic from a simulated attack on Metasploitable2. Created and tuned custom Snort rules to detect brute force attempts and port scans.",
       tools: ["Snort", "Kali Linux", "Metasploitable2", "Wireshark"],
       impact: "Demonstrated ability to detect and log malicious behavior in real time.",
-      color: "primary"
+      color: "primary",
+      category: "detection"
     },
     {
       icon: Network,
@@ -18,7 +28,8 @@ const Projects = () => {
       description: "Scanned a virtual network for open ports and vulnerabilities using Nmap and Nikto. Analyzed results to identify outdated software and misconfigurations.",
       tools: ["Nmap", "Nikto", "Kali Linux"],
       impact: "Strengthened understanding of network hardening techniques.",
-      color: "accent"
+      color: "accent",
+      category: "assessment"
     },
     {
       icon: BarChart3,
@@ -26,7 +37,8 @@ const Projects = () => {
       description: "Created dashboards to monitor and visualize log data from Windows Server and Ubuntu systems. Simulated brute force login attempts and analyzed log patterns.",
       tools: ["Splunk", "Windows Server", "Ubuntu"],
       impact: "Gained real-world experience in log correlation and security alerting.",
-      color: "primary"
+      color: "primary",
+      category: "monitoring"
     },
     {
       icon: Eye,
@@ -34,24 +46,57 @@ const Projects = () => {
       description: "Captured and analyzed HTTP, DNS, and FTP traffic on a test network. Identified potential data leakage and suspicious communications.",
       tools: ["Wireshark", "Windows", "Ubuntu"],
       impact: "Improved traffic analysis skills and understanding of normal vs. abnormal behavior.",
-      color: "accent"
+      color: "accent",
+      category: "analysis"
     }
   ];
 
+  const filteredProjects = selectedFilter === "all" 
+    ? projects 
+    : projects.filter(project => project.category === selectedFilter);
+
   return (
-    <section className="py-20 px-4">
+    <section id="projects" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Cybersecurity <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Hands-on experience in threat detection, vulnerability assessment, and security monitoring
           </p>
+
+          {/* Project Filter Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="lg" className="group border-primary/20 hover:border-primary hover:shadow-elegant">
+                <Filter className="w-4 h-4 mr-2" />
+                Filter by: {selectedFilter === "all" ? "All Projects" : selectedFilter}
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-popover/95 backdrop-blur-sm border border-border/50 z-50">
+              <DropdownMenuItem onClick={() => setSelectedFilter("all")} className="hover:bg-primary/10 cursor-pointer">
+                All Projects
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setSelectedFilter("detection")} className="hover:bg-primary/10 cursor-pointer">
+                Threat Detection
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setSelectedFilter("assessment")} className="hover:bg-primary/10 cursor-pointer">
+                Vulnerability Assessment
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setSelectedFilter("monitoring")} className="hover:bg-primary/10 cursor-pointer">
+                Security Monitoring
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setSelectedFilter("analysis")} className="hover:bg-primary/10 cursor-pointer">
+                Traffic Analysis
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => {
+          {filteredProjects.map((project, index) => {
             const IconComponent = project.icon;
             return (
               <Card key={index} className="group hover:shadow-card hover:scale-105 transition-all duration-300 bg-gradient-card border-border/50">

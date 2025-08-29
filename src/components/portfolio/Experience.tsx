@@ -4,7 +4,7 @@ import { Calendar, Briefcase } from "lucide-react";
 
 const Experience = () => {
   return (
-    <section className="py-20 px-4 bg-secondary/20">
+    <section id="experience" className="py-20 px-4 bg-gradient-secondary">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">

@@ -8,42 +8,43 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cybersecurity Portfolio Theme - Dark with Neon Accents */
-    --background: 218 23% 7%;
-    --foreground: 200 12% 95%;
+    /* Professional Portfolio Theme - Blue/Purple Gradient */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 27% 8%;
-    --card-foreground: 200 12% 95%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 27% 8%;
-    --popover-foreground: 200 12% 95%;
+    --popover: 240 5% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 158 78% 45%;
-    --primary-foreground: 218 23% 7%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 200 12% 95%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 200 8% 65%;
+    --muted: 240 5% 6%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 195 100% 50%;
-    --accent-foreground: 218 23% 7%;
+    --accent: 270 95% 75%;
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 200 12% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 158 78% 45%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
     /* Custom Portfolio Variables */
-    --gradient-primary: linear-gradient(135deg, hsl(158 78% 45%), hsl(195 100% 50%));
-    --gradient-card: linear-gradient(145deg, hsl(220 27% 8%), hsl(217 32% 12%));
-    --shadow-neon: 0 0 20px hsl(158 78% 45% / 0.3);
-    --shadow-card: 0 8px 32px hsl(218 23% 3% / 0.4);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(270 95% 75%));
+    --gradient-secondary: linear-gradient(145deg, hsl(240 10% 3.9%), hsl(240 5% 6%));
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 3.9%), hsl(240 6% 10%));
+    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
+    --shadow-card: 0 8px 32px hsl(240 10% 3.9% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;

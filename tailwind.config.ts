@@ -65,10 +65,11 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-card': 'var(--gradient-card)'
 			},
 			boxShadow: {
-				'neon': 'var(--shadow-neon)',
+				'elegant': 'var(--shadow-elegant)',
 				'card': 'var(--shadow-card)'
 			},
 			transitionTimingFunction: {

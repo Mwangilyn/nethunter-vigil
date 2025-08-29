@@ -17,8 +17,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-background via-background to-secondary/20">
-      <div className="max-w-4xl mx-auto text-center">
+    <section 
+      className="min-h-screen flex items-center justify-center px-4 py-20 relative bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url('/lovable-uploads/20686cf9-647c-4b32-b22d-b6821d6e41fa.png')`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Content */}
         <div className="space-y-6">
           <div className="space-y-4">

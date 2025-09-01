@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { GraduationCap, Award, Globe } from "lucide-react";
 
 const Education = () => {
@@ -15,7 +16,7 @@ const Education = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Education */}
           <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-all duration-300">
             <CardHeader>
@@ -41,30 +42,93 @@ const Education = () => {
           </Card>
 
           {/* Certifications */}
-          <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-all duration-300">
-            <CardHeader>
-              <div className="flex items-center gap-4 mb-4">
+          <div className="md:col-span-2 space-y-6">
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center gap-4 mb-4">
                 <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-accent" />
                 </div>
-                <CardTitle className="text-xl">Certifications</CardTitle>
+                <h3 className="text-2xl font-bold">Certifications</h3>
               </div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-secondary/30 rounded-lg">
-                  <h3 className="font-semibold mb-2">Cybersecurity Fundamentals</h3>
-                  <p className="text-muted-foreground text-sm mb-2">Moringa School</p>
-                  <Badge variant="outline" className="border-accent text-accent">Certified</Badge>
-                </div>
-                <div className="p-3 bg-muted/30 rounded-lg border-l-4 border-accent">
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Future Goals:</strong> CompTIA Security+, IBM Cybersecurity Analyst certification
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Cybersecurity Awareness Certification */}
+              <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-lg text-primary">Introduction to Cybersecurity Awareness</CardTitle>
+                  <p className="text-sm text-muted-foreground">HP LIFE Foundation</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Acquire the skills to:
+                      </p>
+                      <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                        <li>Identify typical threats to online data and information</li>
+                        <li>Implement basic measures to protect your sensitive data</li>
+                        <li>Understand widely used cybersecurity terms</li>
+                      </ul>
+                    </div>
+                    <div className="flex items-center justify-between pt-4">
+                      <Badge variant="outline" className="border-accent text-accent">Certified</Badge>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => window.open('/lovable-uploads/0629ade1-bdd2-4adf-9bd9-adad91384b7d.png', '_blank')}
+                        className="text-primary border-primary hover:bg-primary hover:text-primary-foreground"
+                      >
+                        View Certificate
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* AI for Business Professionals Certification */}
+              <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-lg text-primary">AI for Business Professionals</CardTitle>
+                  <p className="text-sm text-muted-foreground">HP LIFE Foundation</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Learn about:
+                      </p>
+                      <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                        <li>The role of AI in modern business and professional development</li>
+                        <li>Differences between standalone AI tools and integrated AI features</li>
+                        <li>How to craft effective prompts for tools like ChatGPT and Canva</li>
+                        <li>Creating plans to integrate AI into daily work with measurable goals</li>
+                        <li>Using AI ethically with privacy, transparency, and fairness</li>
+                      </ul>
+                    </div>
+                    <div className="flex items-center justify-between pt-4">
+                      <Badge variant="outline" className="border-accent text-accent">Certified</Badge>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => window.open('/lovable-uploads/7754ca52-6768-49eb-b512-cec75e8dc4cd.png', '_blank')}
+                        className="text-primary border-primary hover:bg-primary hover:text-primary-foreground"
+                      >
+                        View Certificate
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Future Goals */}
+            <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-accent">
+              <p className="text-sm text-muted-foreground">
+                <strong>Future Goals:</strong> CompTIA Security+, IBM Cybersecurity Analyst certification
+              </p>
+            </div>
+          </div>
 
           {/* Languages */}
           <Card className="md:col-span-2 bg-gradient-card border-border/50 hover:shadow-card transition-all duration-300">
